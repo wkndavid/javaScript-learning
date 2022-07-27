@@ -92,6 +92,7 @@ fetch(`https://api.gitub.com/users/${userName}`, {
     console.log(`O nome do usuário é: ${data.name}`)
 })
 .catch((err) => {
+    console.log(`Houve algum ${err}`)
 })
 
 
