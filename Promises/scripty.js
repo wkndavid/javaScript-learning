@@ -80,7 +80,7 @@ const resolveAllRace = Promise.race([p4, p5, p6]).then((data) => {
 
 const userName = 'wkndavid'
 //Requisição fetch() - primeiro argumento a url.
-fetch(`https://api.gitub.com/users/${userName}`, {
+fetch(`https://api.github.com/users/${userName}`, {
     method: 'GET',
     headers: {
         Accept: 'application/vnd.github.v3+json',
