@@ -71,3 +71,38 @@ const p6 = new Promise((resolve, reject) => {
 const resolveAllRace = Promise.race([p4, p5, p6]).then((data) => {
     console.log(data)
 })
+
+// Fetch request na API do GitHub.
+// Fetch API - 'biblioteca' nativa do javascript, pra poder fazer requisições assíncronas(Ajax).
+// Recurso nativo que gera uma dependência a menos no código.
+// Request na API PokeApi com método GET
+
+const userName = 'wkndavid'
+//Requisição fetch() - primeiro argumento a url
+fetch(`https://api.gitub.com/users/${userName}`, {
+    method: 'GET',
+    headers: {
+        Accept: 'application/vnd.github.v3+json',
+    },
+}).then((response) => {
+    console.log(typeof response)
+    console.log(response)
+    return response.json()
+}).then((data) => {
+    console.log(`O nome do usuário é: ${data.name}`)
+})
+.catch((err) => {
+    console.log(`Houve algum ${err}`)
+})
+
+
+fetch(`https://pokeapi.co/api/v2/`, {
+    method: 'GET',
+}).then((response) => {
+    console.log(typeof response)
+    console.log(response)
+    return response.json()
+}).then((data) => {
+    console.log(data)
+})
+
