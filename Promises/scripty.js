@@ -14,6 +14,7 @@ myPromise4.then((data) => {
 
 // Retorno do Catch
 // Catch: Trata o que é recebido de Erro!
+
 const promisseRetornoDoCatch = new Promise((resolve, reject) => {
     const errorCatch = 'done'
     
@@ -75,34 +76,38 @@ const resolveAllRace = Promise.race([p4, p5, p6]).then((data) => {
 // Fetch request na API do GitHub.
 // Fetch API - 'biblioteca' nativa do javascript, pra poder fazer requisições assíncronas(Ajax).
 // Recurso nativo que gera uma dependência a menos no código.
-// Request na API PokeApi com método GET
+// Request na API PokeApi com método GET.
 
 const userName = 'wkndavid'
-//Requisição fetch() - primeiro argumento a url
+//Requisição fetch() - primeiro argumento a url.
 fetch(`https://api.gitub.com/users/${userName}`, {
     method: 'GET',
     headers: {
         Accept: 'application/vnd.github.v3+json',
     },
-}).then((response) => {
+})
+.then((response) => {
     console.log(typeof response)
     console.log(response)
     return response.json()
-}).then((data) => {
+})
+.then((data) => {
     console.log(`O nome do usuário é: ${data.name}`)
 })
 .catch((err) => {
-    console.log(`Houve algum ${err}`)
+    console.log(`Houve algum erro: ${err}`)
 })
 
+// Consumindo API PokeApi
 
 fetch(`https://pokeapi.co/api/v2/`, {
     method: 'GET',
-}).then((response) => {
+})
+.then((response) => {
     console.log(typeof response)
     console.log(response)
     return response.json()
-}).then((data) => {
-    console.log(data)
 })
-
+.then((dadosRecebidos) => {
+    console.log(dadosRecebidos)
+})
