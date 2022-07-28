@@ -44,21 +44,27 @@ p.then((message) => {
 const betterDeveloper = 'david'
 
 function whoIsBetterCallback(callback, errorCalback) {
-    if (betterDeveloper != 'isaac' && betterDeveloper != 'david') {
-        errorCalback({
-            name: 'this is worong',
-            message: betterDeveloper + 'Really'
-        })
-    } else {
-        callback({
-            name: betterDeveloper,
-            message: 'CDFs are the best!'
+
+    return new Promise((resolve, reject) => {
+
+        if (betterDeveloper != 'isaac' && betterDeveloper != 'david') {
+                errorCalback({
+                    name: 'this is worong',
+                    message: betterDeveloper + 'Really'
+                })
+            } else {
+                callback({
+                    name: betterDeveloper,
+                    message: 'CDFs are the best!'
+                })
+            }
         })
     }
-}
 
-whoIsBetterCallback((result) => {
+whoIsBetterCallback()
+.then((result) => {
     console.log(result.name + '? Yeah ' + result.message) 
-}), (error) => {
+})
+.catch((error) => {
     console.log(error.name + ' ' + error.message)
-}
+})
