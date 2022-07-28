@@ -38,3 +38,27 @@ p.then((message) => {
 .catch((err) => {
     console.log('this is the catch method ' + err)
 })
+
+// Função em Promise
+
+const betterDeveloper = 'david'
+
+function whoIsBetterCallback(callback, errorCalback) {
+    if (betterDeveloper != 'isaac' && betterDeveloper != 'david') {
+        errorCalback({
+            name: 'this is worong',
+            message: betterDeveloper + 'Really'
+        })
+    } else {
+        callback({
+            name: betterDeveloper,
+            message: 'CDFs are the best!'
+        })
+    }
+}
+
+whoIsBetterCallback((result) => {
+    console.log(result.name + '? Yeah ' + result.message) 
+}), (error) => {
+    console.log(error.name + ' ' + error.message)
+}
