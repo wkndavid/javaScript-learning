@@ -30,4 +30,11 @@ let p = new Promise((resolve, reject) => {
         reject('Failed!')
     }
 })
+// Chamando Promise
 
+p.then((message) => {
+    console.log('this is the then method ' + message)
+})
+.catch((err) => {
+    console.log('this is the catch method ' + err)
+})
