@@ -2,7 +2,7 @@
 // Uso do método then()
 // Conversão da resposta em JSON
 // Adição de headers - 'Content-Type'
-// Usando body parar inserir dados na variável name 
+// Usando body para inserir dados na variável name das propriedades vinda
 // Usando método JSON.stringfy() para converter dados
 
 fetch('https://reqres.in/api/users', {
