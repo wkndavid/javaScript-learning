@@ -7,7 +7,7 @@ fetch("https://reqres.in/api/users",{
     headers: {
         'Content-Type': "application/json"
     },
-    body: JSON.stringify({name: "json"})
+    body: JSON.stringify({name: "Json Son"})
 })
 .then((response) => response.json())
-.then((data) => console.log(data))
+.then((data) => console.log(data.name + ' seu nome será armazenado, certo?'))
