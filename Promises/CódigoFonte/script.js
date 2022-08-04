@@ -41,7 +41,7 @@ p.then((message) => {
 
 // Função em Promise
 
-const betterDeveloper = 'david'
+const betterDeveloper = 'isaac'
 
 function whoIsBetterCallback(callback, errorCalback) {
 
@@ -49,7 +49,7 @@ function whoIsBetterCallback(callback, errorCalback) {
 
         if (betterDeveloper != 'isaac' && betterDeveloper != 'david') {
                 errorCalback({
-                    name: 'this is worong',
+                    name: 'this is wrong',
                     message: betterDeveloper + 'Really'
                 })
             } else {
