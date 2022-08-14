@@ -6,13 +6,31 @@ fetch(url)
     .then(dogData => {
         if (!dogData.ok) {
             throw new Error(`HTTP error, status ${dogData.status}`)
+
+
         }
-        return dogData.json()
-    })
+
+
+    }
     .then(({ message }) => {
         dogImg.setAttribute('src', message)
     })
+    lç,  
+
+
+
+
+}
+
+
+}
+
+
+}
+}
     .catch(error => {
         console.log(error.message)
     })
-    
+    .finally(data => {
+        console.log(typeof data)
+    })
